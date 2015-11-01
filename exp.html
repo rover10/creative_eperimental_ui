@@ -1,0 +1,149 @@
+<html>
+<head>
+<style>
+.nameBox{
+    width:200px;
+    height:25px;
+    transition-property: width background-color height left border-radius opacity;
+    transition-duration: .5s;
+    position:absolute;
+    transform:-webkit-perspective(200px);
+    perspective-origin: 25% 75%;
+    transform: rotateX(45deg);
+    transform: rotateY(30deg);
+    transform: rotateZ(-30deg);
+    //transform: translate3d(230x 450x 80px );
+    //transform: scale3d(34,87,78);
+    transform: rotate3d(34,780,23, 45);
+    opacity: 1;
+}
+    .nameBox:hover{
+        
+    }
+    .nameBox:focus{
+        background-color:red;
+        width:400px;
+        height: 100px;
+        font-size: 80px;
+        left:50px;
+        border-radius: 20px;
+        cursor:progress;
+        opacity: 0.8;
+    }
+    
+    #anibox{
+        position: fixed;
+        background-color: red;
+        width:20px;
+        height: 20px;
+        animation-name: mover;
+        animation-duration: 4s;
+        animation-iteration-count:infinite;
+        animation-direction:alternate-reverse;
+        left:50%;
+        top:50%;
+        
+    }
+    
+    @-webkit-keyframes mover{
+        0% {left:0px;}
+        25% {left:200px;}
+        50% {top:100px;}
+        75% {left:0px;}
+        100% {top:0px;}
+        
+    }
+    
+    
+    @keyframes mover{
+        0% {left:50%; top:50%;}
+        25% {left:60%; top:50%; border-radius: 100%}
+        50% {top:60%;left:60%;}
+        75% {left:50%;top:60%;border-radius: 100%}
+        100% {top:50%;left:50%; border-radius: 100%}   
+    }
+    #squareBox{
+        background-color:greenyellow;
+        width:250px;
+        height:250px;
+        //animation-name: rotater;   
+        animation-iteration-count: infinite;
+        animation-duration: 2s  ;
+        position: fixed;
+        perspective-origin: 25% 75%;
+        animation-name: rotater;
+        animation-iteration-count:infinite;
+        //animation-direction:alternate-reverse;
+        left:20%;
+        top:20%;
+        // transform:-webkit-perspective(200px);
+        border-style: solid;
+        border-bottom-color: green;
+    
+    }
+    
+    @keyframes rotater{
+        
+        15% {opacity: .5;}
+
+        30% {  transform: rotateX(45deg);
+                transform: rotateY(30deg);
+                transform: rotateZ(-30deg);
+                border-radius: 10%;
+            perspective-origin: 25% 75%;
+            left:10%;
+        }
+    
+        45% {  transform: rotateX(30deg);
+                transform: rotateY(30deg);
+                transform: rotateZ(-30deg);
+                border-radius: 20%;     
+            perspective-origin: 40% 20%;
+            left: 20%;
+        }
+    
+        60% {  transform: rotateX(90deg);
+                transform: rotateY(30deg);
+                transform: rotateZ(-30deg);
+                border-radius: 40%;
+            perspective-origin: 60% 35%;
+            left: 30%;     
+        }
+    
+        75% {  transform: rotateX(120deg);
+                transform: rotateY(30deg);
+                transform: rotateZ(-30deg);
+                border-radius: 60%;     
+            perspective-origin: 80% 60%;
+            left:40%;
+        }
+    
+        90% {  transform: rotateX(150deg);
+                transform: rotateY(30deg);
+                transform: rotateZ(-30deg);
+                border-radius: 80%;     
+            perspective-origin: 100% 80%;
+            left:60%;
+        }
+    
+        100% {  transform: rotateX(180deg);
+                transform: rotateY(30deg);
+                transform: rotateZ(-30deg);
+                border-radius: 100%;     
+                left:80%;
+        }
+    
+    
+</style>
+</head>
+<body>
+    <input type="text" class="nameBox">
+    
+    <div id="anibox">
+    </div>
+    
+    <div id="squareBox">
+        
+    </div>
+</body>
+</html>
